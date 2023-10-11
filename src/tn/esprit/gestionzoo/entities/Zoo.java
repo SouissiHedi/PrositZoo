@@ -1,11 +1,47 @@
 package tn.esprit.gestionzoo.entities;
 public class Zoo {
 
-    static final int NUMBER_OF_CAGES = 25;
-    Animal[] animals;
+    private static final int NUMBER_OF_CAGES = 25;
+    private Animal[] animals;
     private String name;
-    String city;
-    int nbrAnimals;
+    private String city;
+    private int nbrAnimals;
+
+    public void setAnimals(Animal[] animals) {
+        this.animals = animals;
+    }
+
+    public Animal[] getAnimals() {
+        return animals;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setNbrAnimals(int nbrAnimals) {
+        this.nbrAnimals = nbrAnimals;
+    }
+
+    public int getNbrAnimals() {
+        return nbrAnimals;
+    }
+
+    public static int getNumberOfCages() {
+        return NUMBER_OF_CAGES;
+    }
 
     public Zoo() {
     }
@@ -61,8 +97,9 @@ public class Zoo {
 
     public int searchAnimal(Animal animal) {
         int index = -1;
+
         for (int i = 0; i < nbrAnimals; i++) {
-            if (animal.name == animals[i].name)
+            if (animal.getName() == animals[i].getName())
                 return i;
         }
         return index;
