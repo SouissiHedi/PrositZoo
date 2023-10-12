@@ -26,7 +26,6 @@ public class Aquatic extends Animal {
 
     @Override
     public String toString() {
-        String a =super.toString();
-        return a +  ',' + '\n' +"habitat=" + habitat;
+        return super.toString() +  ',' + '\n' +"habitat=" + habitat;
     }
 }
