@@ -21,13 +21,8 @@ public class Penguin extends Aquatic {
 
     @Override
     public String toString() {
-        return "*********\n    Animal : " +'\n' +
-                "family=" + this.getFamily() + ',' + '\n' +
-                "name=" + this.getName() + ',' + '\n' +
-                "age=" + this.getAge() + ',' + '\n' +
-                "isMammal=" + this.isMammal() + ',' + '\n' +
-                "habitat=" + this.getHabitat()+ ',' + '\n' +
-                "swimming depth=" + swimmingDepth +"\n*********\n";
+        String a =super.toString();
+        return a + ',' + '\n' + "swimming depth=" + swimmingDepth ;
     }
 
 }

@@ -1,9 +1,9 @@
 package tn.esprit.gestionzoo.entities;
 public class Animal {
 
-    private String family, name;
-    private int age;
-    private boolean isMammal;
+    protected String family, name;
+    protected int age;
+    protected boolean isMammal;
 
 
     public Animal() {
@@ -54,11 +54,10 @@ public class Animal {
 
     @Override
     public String toString() {
-        return "Animal{" +
-                "family='" + family + '\'' +
-                ", name='" + name + '\'' +
-                ", age=" + age +
-                ", isMammal=" + isMammal +
-                '}';
+        return "*********\n    Animal : " +'\n' +
+                "family=" + this.getFamily() + ',' + '\n' +
+                "name=" + this.getName() + ',' + '\n' +
+                "age=" + this.getAge() + ',' + '\n' +
+                "isMammal=" + this.isMammal() ;
     }
 }

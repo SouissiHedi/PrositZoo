@@ -45,7 +45,7 @@ public class Main {
         myZoo.displayAnimals();
 
 
-        System.out.println("\n\n--------------------------------------------------------------\n\n");
+        System.out.println("\n--------------------------------------------------------------\n");
 
         Aquatic animalAqua = new Aquatic("balaine", "dory", 2, true,"b7ar");
         Terrestrial animalTerr = new Terrestrial("3asafir", "batta", 1, false,2);
@@ -55,6 +55,8 @@ public class Main {
         System.out.println(animalTerr);
         System.out.println(dolphino);
         System.out.println(batta);
+
+        System.out.println("\n--------------------------------------------------------------\n");
 
         animalAqua.swim();
         dolphino.swim();

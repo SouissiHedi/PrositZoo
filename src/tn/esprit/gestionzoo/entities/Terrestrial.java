@@ -1,7 +1,7 @@
 package tn.esprit.gestionzoo.entities;
 
 public class Terrestrial extends Animal {
-    private int nbrLegs;
+    protected int nbrLegs;
 
     public void setNbrLegs(int nbrLegs) {
         this.nbrLegs = nbrLegs;
@@ -21,12 +21,8 @@ public class Terrestrial extends Animal {
 
     @Override
     public String toString() {
-        return "*********\n    Animal : " +'\n' +
-                "family=" + this.getFamily() + ',' + '\n' +
-                "name=" + this.getName() + ',' + '\n' +
-                "age=" + this.getAge() + ',' + '\n' +
-                "isMammal=" + this.isMammal() + ',' + '\n' +
-                "habitat=" + nbrLegs+ "\n*********\n";
+        String a =super.toString();
+        return a + ',' + '\n' + "habitat=" + nbrLegs;
     }
 
 }
