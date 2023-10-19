@@ -1,5 +1,5 @@
 package tn.esprit.gestionzoo.entities;
-public class Animal {
+public sealed class Animal permits Aquatic, Terrestrial {
 
     protected String family, name;
     protected int age;
@@ -51,6 +51,8 @@ public class Animal {
         this.age = age;
         this.isMammal = isMammal;
     }
+
+
 
     @Override
     public String toString() {

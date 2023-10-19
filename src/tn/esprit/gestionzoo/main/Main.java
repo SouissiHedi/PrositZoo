@@ -12,7 +12,6 @@ public class Main {
         lion.setIsMammal(true);
 
         Zoo myZoo = new Zoo("Wildlife Park", "Ariana");
-        Zoo notMyZoo = new Zoo("WaterPark", "Siliana");
 
 
         Animal dog = new Animal("Canine", "Snoopy", 2, true);
@@ -27,7 +26,7 @@ public class Main {
         Animal dog2 = new Animal("Canine", "lll", 2, true);
         System.out.println(myZoo.searchAnimal(dog2));
 
-        //   System.out.println(myZoo.removeAnimal(dog));
+
         myZoo.displayAnimals();
 
 
@@ -62,6 +61,28 @@ public class Main {
         dolphino.swim();
         batta.swim();
 
-    }
+        System.out.println("\n--------------------------------------------------------------\n");
 
+        myZoo.addAquaticAnimal(animalAqua);
+        myZoo.addAquaticAnimal(dolphino);
+        myZoo.addAquaticAnimal(batta);
+
+        Aquatic[] a= myZoo.getAquaticAnimals();
+        for(int i=0;i< myZoo.getNbrAquaticAnimals();i++){
+            a[i].swim();
+        }
+
+
+        Penguin batta2 = new Penguin("penguin","kahla",4,false,"b7ar",100.54F);
+        Penguin batta3 = new Penguin("penguin","kahla",3,false,"b7ar",300.54F);
+
+        myZoo.addAquaticAnimal(batta2);
+        myZoo.addAquaticAnimal(batta3);
+
+        System.out.println(myZoo.maxPenguinSwimmingDepth());
+
+        myZoo.displayNumberOfAquaticsByType();
+
+        System.out.println(batta2.equals(batta3));
+    }
 }

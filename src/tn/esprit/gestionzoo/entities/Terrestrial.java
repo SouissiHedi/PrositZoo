@@ -1,7 +1,7 @@
 package tn.esprit.gestionzoo.entities;
 
-public class Terrestrial extends Animal {
-    protected int nbrLegs;
+public final class Terrestrial extends Animal {
+    private int nbrLegs;
 
     public void setNbrLegs(int nbrLegs) {
         this.nbrLegs = nbrLegs;
