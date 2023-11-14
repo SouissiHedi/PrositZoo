@@ -1,49 +1,16 @@
 package tn.esprit.gestionzoo.entities;
+
+import tn.esprit.gestionzoo.exceptions.InvalidAgeException;
+
 public sealed class Animal permits Aquatic, Terrestrial {
 
-    protected String family, name;
-    protected int age;
-    protected boolean isMammal;
+    private String family, name;
+    private int age;
+    private boolean isMammal;
 
 
     public Animal() {
-
     }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-    public String getName(){
-        return this.name;
-    }
-
-    public void setFamily(String family) {
-        this.family = family;
-    }
-    public String getFamily(){
-        return this.family;
-    }
-
-    public void setIsMammal(Boolean isMammal) {
-        this.isMammal = isMammal;
-
-    }
-
-    public boolean isMammal() {
-        return this.isMammal;
-
-    }
-
-    public int getAge(){
-        return this.age;
-    }
-    public void setAge(int age) {
-        if (age < 0)
-            System.out.println("An animal can't have a negative age");
-        else
-            this.age = age;
-    }
-
 
     public Animal(String family, String name, int age, boolean isMammal) {
         this.family = family;
@@ -53,13 +20,45 @@ public sealed class Animal permits Aquatic, Terrestrial {
     }
 
 
+    public String getFamily() {
+        return family;
+    }
+
+    public void setFamily(String family) {
+        this.family = family;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) throws InvalidAgeException {
+        if (age < 0)
+            throw new InvalidAgeException("The age must a positive number");
+        else
+            this.age = age;
+    }
+
+    public boolean isMammal() {
+        return isMammal;
+    }
+
+    public void setMammal(boolean mammal) {
+        isMammal = mammal;
+    }
+
 
     @Override
     public String toString() {
-        return "*********\n    Animal : " +'\n' +
-                "family=" + this.getFamily() + ',' + '\n' +
-                "name=" + this.getName() + ',' + '\n' +
-                "age=" + this.getAge() + ',' + '\n' +
-                "isMammal=" + this.isMammal() ;
+        return "Animal{ Family:" + family + ", Name: " + name + ", Age: " + age + ", isMammal: " + isMammal + "}";
     }
+
 }
